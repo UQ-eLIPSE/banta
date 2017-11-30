@@ -1,0 +1,19 @@
+{
+  "name": "banta",
+  "version": "0.0.1",
+  "description": "JavaScript bindings for Manta",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "eLIPSE",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "8.0.53",
+    "typescript": "2.6.2"
+  },
+  "dependencies": {
+    "axios": "0.17.1"
+  }
+}
