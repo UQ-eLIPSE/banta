@@ -10,7 +10,12 @@ export namespace NDJSON {
         return JSON.parse(str) as T;
     }
 
-    export function parse<T extends { [key: string]: any }>(str: string) {
+    export function parse<T extends { [key: string]: any }>(str: string | object) {
+        // Check if object; do not parse if already object
+        if (typeof str === "object") {
+            return [str as T];
+        }
+
         return splitAtLineDelimiter(str).map<T>(parseSingleLine);
     }
 }

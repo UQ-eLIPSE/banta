@@ -1,9 +1,9 @@
-export interface DataHydrationTransform {
-    [key: string]: (value: any) => any,
+export type DataHydrationTransform<T> = {
+    [K in keyof T]?: (value: any) => any;
 }
 
 export namespace DataHelper {
-    export function objectTransform<T extends { [key: string]: any }, U extends {[K in keyof T]: any}>(transform: DataHydrationTransform, data: T, ignoreUndefinedSourceValues: boolean = true) {
+    export function objectTransform<T extends { [key: string]: any }, U extends {[K in keyof T]: any}>(transform: DataHydrationTransform<T>, data: T, ignoreUndefinedSourceValues: boolean = true) {
         const keys = Object.keys(transform);
 
         // Set up object to merge over data object
@@ -20,7 +20,7 @@ export namespace DataHelper {
             }
 
             // Set transformed value into merge object
-            mergeObject[key] = transform[key](sourceValue);
+            mergeObject[key] = transform[key]!(sourceValue);
         });
 
         // Return new shallow copied and merged object

@@ -1,12 +1,15 @@
 # banta
+
 A better JavaScript SDK for Manta
 
 ## Installation
-```
+
+```bash
 npm install UQ-eLIPSE/banta
 ```
 
 ## Usage
+
 ```javascript
 /// Importing
 
@@ -53,10 +56,36 @@ Returned objects generally follow the same interface as the returned JSON data
 as described in [the REST API documentation](https://apidocs.joyent.com/manta/api.html).
 
 ### `Banta.prototype.listDirectory(path)`
+
 ### `Banta.prototype.deleteDirectory(path)`
+
 ### `Banta.prototype.putDirectory(path)`
+
+### `Banta.prototype.getObject(path)`
+
 ### `Banta.prototype.deleteObject(path)`
+
 ### `Banta.prototype.createSnapLink(targetObjectPath, newLinkPath)`
+
+### `Banta.prototype.createJob(config)`
+
+### `Banta.prototype.addJobInput(path, input)`
+
+### `Banta.prototype.endJobInput(path)`
+
+### `Banta.prototype.cancelJob(path)`
+
+### `Banta.prototype.listJobs()`
+
+### `Banta.prototype.getJob(path)`
+
+### `Banta.prototype.getJobOutput(path)`
+
+### `Banta.prototype.getJobInput(path)`
+
+### `Banta.prototype.getJobFailures(path)`
+
+### `Banta.prototype.getJobErrors(path)`
 
 ## Notes
 
